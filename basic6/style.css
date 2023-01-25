@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.치료::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+
+
+.박일수 {
+    background-color: #0081C9;
+    width: 1000px;
+    /* margin-right: auto;
+    margin-left: auto; */
+    margin: 0 auto;
+
+    padding: 20px;
+    /* 상하좌우20px 설정 */
+    padding: 20px 40px;
+    /* 상하20px - 좌우40px */
+    padding: 20px 40px 50px;
+    /* 상20px - 좌우40px - 하50px */
+    padding: 10px 20px 30px 40px;
+    /* 상10px - 우20px - 하30px - 좌40px (시계방향) */
+}
+
+
+
+.박일수 .박첫째 {
+    background-color: #FFb26B;
+    padding: 20px;
+}
+
+.박일수 .박첫째 .자식 {
+    width: 49%;
+    height: 200px;
+    float: left;
+}
+
+.박일수 .박첫째 .자식.첫째자식1 {
+    background-color: #68B984;
+    margin-right: 2%;
+    padding: 20px;
+    border: 5px solid red;
+    /* box-sizing: border-box; */
+    /* → width + padding + dorder를 영역안으로 포함 */
+    box-sizing: border-box;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 {
+    background-color: #009EFF;
+}
+
+.박일수 .박첫째 .자식.첫째자식2 object {}
+
+
+
+
+.박일수 .박둘째 {
+    background-color: #9D3C72;
+    padding: 20px;
+    /* margin: 30px(상) 0(좌우) 0(하);
+    (margin-top 30px과 동일한 값) */
+    margin-top: 30px;
+}
+
+/* 띄워쓰기 → 자손을 부름 */
+/* > → 직계자식을 부름 */
+.박일수 .박둘째>div {
+    background-color: #7F669D;
+    width: 23.5%;
+    float: left;
+    height: 100px;
+    margin-right: 2%;
+}
+
+.박일수 .박둘째>div.둘자식1 {
+    background-position: url(img.png);
+    /*배경 사진 url(이미지파일);불러오기*/
+    background-size: 20px;
+    /*배경사이즈*/
+    background-repeat: no-repeat;
+    /*그림반복 no*/
+    background-position: 130px 20px;
+    /*x축 y축*/
+    /*배경 위치*/
+    transition: 0.3s;
+}
+
+.박일수 .박둘째>div.둘자식1:hover {
+    background-size: 100px;
+    background-position: center center;
+
+
+}
+
+.박일수 .박둘째>div.둘자식2 {
+    background: #FFb26B url(img.png)no-repeat 130px 0px;
+    /*이미지 불러오기 반복 없음*/
+    background-size: 80px;
+    transition: 0.3s;
+    /*마우스를 올렸을 때 시간을 주는 것*/
+
+}
+
+.박일수 .박둘째>div.둘자식2:hover
+
+/*마우스를 올리면*/
+    {
+    background-image: url(img2.png);
+}
+
+.박일수 .박둘째>div.둘자식3 {
+    overflow: hidden
+        /* 영역보다 큰 자식요소를 숨김 */
+    ;
+
+    .박일수 .박둘째>div.둘자식3 iframe
+
+    /* 둘자식 사이의 넓이를 맞춰라*/
+        {}
+
+    .박일수 .박둘째>div.둘자식4 {
+        margin-right: 0;
+        overflow: hidden;
+    }
+
+    .박일수 .박둘째>div.둘자식4 iframe {}
+
+
+
+
+    .박일수 .박셋째{
+        background-color: #CB1C8D;
+        margin-top: 30px;
+        padding: 20px;
+        color: white;/*박셋째의 자식에게 다 적용이 된다*/
+        font-size: 20px;/*자식들의 글자크기도 다 적용이 된다.*/
+        text-align: center;
+        line-height: /*행간/높이선*/200px;
+    }
+    .박일수 .박셋째>div{
+        background-color: #68B984;
+        width: 33.3333%;
+        height: 200px;
+        float: left;
+
+    }
+
+    .박일수 .박셋째>div.세자식1 {}
+
+    .박일수 .박셋째>div.세자식2 {}
+
+    .박일수 .박셋째>div.세자식3 {
+        margin-right: 0;
+    }

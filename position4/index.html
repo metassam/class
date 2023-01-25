@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="전체">
+        <!--id는 '전체'라는 이름이 다른 곳에서 중복되면 안된다.
+        백엔드는 id 쓰지 말라고 할때도 있다.-->
+        <div class="첫째자식">
+            <!--.a<.b{}-->
+            <div class="wrap">
+                <!--별도의 영역이 필요할때-->
+                <div class="첫째손자 첫손1">첫째손자1</div>
+                <div class="첫째손자 첫손2">첫째손자2</div>
+            </div>
+        </div>
+        <div class="둘째자식">
+            <div class="둘째손자">둘째손자</div>
+        </div>
+        <div class="셋째자식 clear">
+            <div class="셋째손자1">셋째손자1
+                <h4>정렬하는 요소들</h4>
+                <ol>
+                    <li>coffee</li>
+                    <li>tea</li>
+                    <li>milk</li>
+                    <p>잘못들어오셨습니다.</p>
+                </ol>
+            </div>
+            <div class="셋째손자2">셋째손자2</div>
+            <h4>정렬하는 요소들(순서가 없는 list)
+                <ul>
+                    <!---ul>li*3-->
+                    <li>cofee</li>
+                    <li>tea</li>
+                    <li>milk</li>
+                </ul>
+
+            </h4>
+        </div>
+        <div class="넷째자식">
+            <div class="넷째손자">
+                <dl>
+                    <dt>커피</dt>
+                    <dd>검은색 쓴맛의 액체</dd>
+
+                    <dt>사과</dt>
+                    <dd>초겨울에 생산되는 맛있는 과일</dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

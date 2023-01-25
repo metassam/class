@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <!--slick cdn에서 min.css 복사하되 head안에 넣되 style.css앞에 넣어야 밑에꺼가 더 영향력이 커진다-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />">
+    <title>slick2</title>
+</head>
+
+<body>
+    <div class="wrap">
+                    
+        <!--.wrap>.main-->
+        <div class="main">
+            <div class="your-class">
+                <div class="s1">
+                    <!--autoplay자동재생 
+                    muted 음소거
+                    controls 아래 재생 컨트롤-->
+                    <video autoplay muted controls
+                        src="https://s3550.smartucc.kr/encodeFile/3550/2022/11/24/1b69cd646c8e0198c5acdb4510c21751_W.mp4"
+                        type="video/mp4"></video>
+
+                </div>
+                <div class="s2"><video autoplay muted controls
+                        src="https://s3550.smartucc.kr/encodeFile/3550/2022/11/24/1b69cd646c8e0198c5acdb4510c21751_W.mp4"
+                        type="video/mp4"></video>
+                </div>
+                <div class="s3"><video autoplay muted controls
+                        src="https://s3550.smartucc.kr/encodeFile/3550/2022/11/24/1b69cd646c8e0198c5acdb4510c21751_W.mp4"
+                        type="video/mp4"></video>
+                </div>
+            </div>
+            <!--slick 사이트 ueage에서 html markup 복사해서 넣기-->
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <!--jquery는 닫는body앞에 넣기-->
+    <!--jquery cdn 안에 1.0버전 script는 하나의 코드만 추가시 새로운 script를 만들어야한다.먼저 참조할 것을 위에 넣는다-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.your-class').slick({
+                autoplay:true,//,를 찍기
+                dots:true,
+                fade:true,
+                //setting - name: setting - value :
+                });
+        });
+    </script>
+</body>
+
+</html>

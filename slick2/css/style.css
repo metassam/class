@@ -1,0 +1,88 @@
+@charset "UTF-8"
+*{margin: 0;padding: 0;}
+ul,li{list-style: none;}
+
+.wrap {}
+
+.wrap .container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.wrap .container .slick .slick-slide {
+    height: 200px;
+}
+
+.wrap .container .slick .slick-slide img {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* slick button*/
+.wrap .container .slick .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;
+    /*0으로 하지 않으면 위치가 바뀐다*/
+    visibility: hidden;
+
+}
+
+.wrap .container .slick .slick-prev {
+    z-index: 10;
+    left: 10%;
+
+}
+
+.wrap .container .slick .slick-prev:after {
+    content: "\f053";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 30px;
+    color: white;
+    /*아이콘은 글자처럼 취급*/
+
+}
+
+.wrap .container .slick .slick-next {
+    right: 10%;
+
+}
+
+.wrap .container .slick .slick-next::after {
+    content: "\f054";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+    visibility: visible;
+    font-size: 30px;
+    color: white;
+}
+.wrap .container .slick .slick-dots{
+    text-align: center;
+}
+.wrap .container .slick .slick-dots li{
+    display: inline;
+    margin: 0 5px;
+    /*5px를 주는 거면 실제는 10px가 적용
+inline요소는 padding과 margin의 좌우는 적용되나 상하는 적용안됨*/
+}
+.wrap .container .slick .slick-dots li button{
+    font-size: 0; border: none; 
+    width: 13px; height: 13px;
+    background-color: #333;
+    border-radius: 50%;
+    transition: 0.3s;/*모든버튼에 시간을 주면 부드럽게 된다.*/
+
+}
+.wrap .container .slick .slick-dots li.slick-active button{
+    background-color: #333;
+    width: 20px;border-radius: 10px;
+
+    /*인라인요소중에서 공간을 인식하는 요소가 있다.
+    img,button*/
+    /*awesome 버전을 맞춰서 넣어야한다.*/
+
+}

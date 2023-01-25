@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* 서버에 올릴때는 꼭 ""를 사용해야하며,
+대문자로 UTF-8로 적어야함 / 고정 */
+
+*{margin: 0; padding: 0;}
+
+.치료::after{
+    content: ""; clear: both; display: block;
+}
+
+
+/* 1. 전체 ======================================== */
+.전체 {
+    position: relative;
+    background-color: gray;
+    width: 600px;
+    border: 5px solid black;
+    margin-left: 100px;
+    margin-top: 200px;
+}
+
+.전체>div{
+    width: 150px;
+    height: 150px;
+}
+
+
+/* 2. pink ======================================== */
+
+.전체 .pink {
+    background-color: pink;
+    position: static;
+    left: 50px; 
+/* static은 기본값으로 left를 설정해도
+값이 적용되지않음 */
+}
+
+
+/* 3. green ======================================== */
+.전체 .green {
+    background-color: green;
+    position: relative;
+    left: 250px; top: 50px;
+/* relative는 left right를 설정해도, */
+/* 기본 자신의 위치를 기억함. */
+/* 주위에 아무런 영향을 주지 않음 */
+/* left, top의 기준은 원래 자신의 위치 */
+/* 부모의 위치에서 left 250px 이동 */
+/* 부모의 위치에서 top 50px 이동 */
+/* 이동하는건 부모의 기준에서 자신의 위치를 기억하고 이동 */
+}
+
+
+/* 4. red ======================================== */
+
+.전체 .red {
+    background-color: red;
+    position: absolute;
+    /* 원래 가진 영역을 잊어버리게 됨 (자신의 위치 기억X) */
+    /* 조상 기준으로 삼는데 조상이 기준이 되기 위해서는, */
+    /* 조상의 position이 relative, absolute, fixed이면, */
+    /* 기준이 될 수 있다. */
+    left: 100px; top: 100px;
+/* absolute는 부모가 red를 인식하지 못함. */
+/* absolute는 전체(부모)에 붙을려고 했으나, */
+/* 붙을 수 있는 조건이 되지 않아 body에 붙음 */
+/* 부모에게 position: relative;를 설정하게 되면 */
+/* 달라붙을 수 있는 조건이되어 red는 전체(부모) 따라간다. */
+}
+
+
+/* 5. blue ======================================== */
+
+.전체 .blue {
+    background-color: blue;
+    position: fixed;    /* 윈도우 기준으로 배치 */
+    right: 150px; top: 100px;
+    /* left: 0; top: 100px; */
+}
+
+/* fixed 화면 right에 붙어 top에서 100px 떨어져있는 설정 */
+/* 퀵맵, 맨위로 올라가는 버튼 등에 많이 사용 */
+
+/* left로 하면 문서와 겹쳐지더라도 맨위에 보이고, */
+/* 지정된자리에서 벗어나지 않음. */
+
+/* 부모입장에선 blue가 자식으로 인식하지 못함 */
+
+
+.영역 {
+    margin-top: 50px;
+    background-color: gray;
+    border: 5px solid black;
+    width: 1000px;
+    margin: 50px auto 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.영역>div{
+    background-color: green;
+    width: 49%;
+    float: left;
+    height: 300px;
+}
+
+.영역>div.포지션1{
+    margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+    /* 부모보다 넘치게되어도 부모안에 영역이될 수 있도록 지정 */
+}
+
+.영역>div.포지션1 .포자{
+    width: 0%;
+    height: 0%;
+    background-color: pink;
+    position: absolute;     /* 유령, 누구한테 반드시 붙음 */
+    left: 50%; top: 50%;   /* %는 부모 기준으로 이동 */
+    transform: translate(-50%, -50%);
+    /* abolute는 왼쪽상단의 꼭지점 기준으로 움직인다. */
+    /* 이를 상쇄시켜주기 위해 transform을 사용한다. */
+    /* (x축,y축); %로 지정하게 되면% 기준이 자신이다. */
+    /* 내몸의 기준으로 -50% x,y를 이동하겠다. */
+    transition: 0.5s;   /* hover 바뀌는부분 시간 딜레이 */
+}
+
+.영역>div.포지션1:hover .포자{
+    width: 120%;
+    height: 120%;
+    d
+}
+
+.영역>div.포지션1{}
+
+
+/* 6. space ======================================== */
+
+.space {
+    height: 2000px;
+}
+
+
+
+
+
+/* ■■■■ position 태그 ■■■■ */
+/* 기준 위치 중심으로 요소를 절대값으로 배치한다. */
+
+/* ■■ 속성값 ■■ */ /*
+static   : 기본값
+relative : 요소의 원래 위치를 기준으로 배치
+absolute : 가까운 부모 중 position 속성 값이
+            static이 아닌 요소를 기준으로 배치
+fixed    : 윈도우 브라우저 기준으로 배치
+sticky   : 스크롤이 생기면 지정한 위치에서 고정됨. */
+
+/* 
+■■ relative의 특징
+1. 위치와 크기가 변하지 않는다.
+2. 원래 위치를 기준으로 left, right, top, bottom값으로
+    위치를 조정한다.
+3. left, right, top, bottom값으로 움직이는 것은 가상으로
+움직이는 것으로 다른 요소들의 위치에 영향을 주지 않는다. */
+
+/* 
+■■ absolute의 특징
+1. 요소 위치를 다른 요소들이 모르게 된다.
+2. 요소의 크기가 내용의 크기로 축소된다.
+3. 가까운 부모 중 position속성의 값이 기본값이 아닌 요소를
+    기준으로 배치된다.
+4. 기준이 없다면 브라우저 화면이 기준이 된다.
+5. left, right, top, bottom 값으로 위치를 설정한다. */
+
+/*  
+■■ fixed의 특징
+1. 요소의 위치를 다른 요소들이 모르게 된다.
+2. 요소의 크기가 내용의 크기로 축소된다.
+3. 무조건 브라우저 화면이 기준이 된다.
+4. left, right, top, bottom 값으로 위치를 설정한다. */
+
+/* 
+■■ sticky
+Z-index
+1. 요소를 Z축 기준으로 앞 뒤로 배치
+2. index값이 높을 수록 z축을 기준으로 앞으로 배치 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

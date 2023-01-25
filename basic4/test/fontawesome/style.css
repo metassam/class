@@ -1,0 +1,9 @@
+
+.section::after{
+    content: "\f773";
+    font-family: "Font Awesome 5 free";
+    font-weight: 900;
+}
+/*폰트어썸에 들어가서 개발자 모드에서 폰트를 잡으면 before에 번호를 복사
+i class를 클릭하면 폰트패밀리/웨이트를 둘다 복사해서 넣되, 패밀리 pro를 free로 바꿔야
+무료버전을 쓸 수 있다.*/

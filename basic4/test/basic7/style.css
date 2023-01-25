@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.전체{border-color:red ;
+    width: 1000px;
+    margin: 30px auto 0;
+    padding: 20px;
+    
+
+}
+.전체 .첫째{background-color:yellow ;}
+.전체 .둘째{background-color:green ;}
+
+}
